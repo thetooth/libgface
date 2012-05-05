@@ -1,7 +1,7 @@
 #include "gface.h"
 
 static bool validated = false;
-static char* keys[32] = {
+static char* keys[5] = {
 	"ED65D668-CE4F-4A28-99CD-FD7670C558C4",
 	"5B057545-9213-4AD0-9D67-AD01FFD25C0F",
 	"17ABBA43-5020-4E95-A889-84E408DB0BAA",
@@ -14,7 +14,8 @@ bool gface_init(char *license_key)
 	int i;
 	for (i = 0; i <= 5; i++)
 	{
-		if (strncmp(license_key, keys[i], 32) == 0){
+		if (strncmp(license_key, keys[i], 35) == 0){
+			validated = true;
 			return true;
 		}
 	}
