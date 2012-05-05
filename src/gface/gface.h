@@ -1,4 +1,10 @@
+#if defined(_WIN32)
+#define false 0
+#define true 1
+#define bool int
+#else
 #include <stdbool.h>
+#endif
 #include <wchar.h>
 
 #if !defined(_GFACE_GFACE_H)
